@@ -1,0 +1,169 @@
+/* ===== OVERLAY ===== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #f6f1e8;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    opacity 1s ease,
+    visibility 1s ease;
+}
+
+.overlay.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ===== ENVELOPE (PC - Exatamente como no seu código original) ===== */
+.envelope {
+  position: relative;
+
+  height: 100vh;
+  width: min(100vw, calc(100vh * 832 / 1216));
+
+  aspect-ratio: 832 / 1216;
+
+  perspective: 1800px;
+}
+
+.envelope-full {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  z-index: 1;
+}
+
+.envelope.zoom {
+  transform: scale(1.06);
+}
+
+.envelope-back {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  display: block;
+  z-index: 2;
+}
+
+.envelope-flap {
+  position: absolute;
+  inset: 0;
+
+  transform-origin: top center;
+  transform-style: preserve-3d;
+
+  transition: transform 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  z-index: 5;
+}
+
+.flap-img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  pointer-events: none;
+
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.12));
+}
+
+.envelope-full,
+.envelope-back,
+.flap-img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.envelope.open .envelope-flap {
+  transform: rotateX(150deg);
+}
+
+.seal-btn {
+  position: absolute;
+
+  left: 50%;
+  top: 60%;
+
+  transform: translate(-50%, -50%);
+
+  width: 38%;
+
+  border: none;
+  background: transparent;
+  padding: 0;
+
+  cursor: pointer;
+
+  z-index: 20;
+}
+
+.seal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  display: block;
+
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.22));
+}
+
+/* ===== MODIFICAÇÕES APENAS PARA CELULAR ===== */
+@media (max-width: 768px) {
+  /* No celular o fundo do overlay fica transparente para o hero aparecer */
+  .overlay {
+    background: transparent;
+  }
+
+  /* Oculta a imagem estática interna da carta no celular */
+  .envelope-full {
+    display: none !important;
+  }
+
+  .envelope {
+    width: 100vw;
+    height: 100dvh;
+    aspect-ratio: auto;
+  }
+
+  .envelope-back,
+  .flap-img {
+    object-fit: cover;
+  }
+
+  .seal-btn {
+    width: 60%;
+    top: 56%;
+  }
+
+  .hero {
+    height: 100dvh;
+  }
+}

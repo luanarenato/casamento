@@ -1,0 +1,29 @@
+.language-switcher {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  font-family: sans-serif;
+}
+
+.language-btn {
+  border: 0;
+  background: transparent;
+  padding: 2px 4px;
+  cursor: pointer;
+  font: inherit;
+  opacity: 0.55;
+}
+
+.language-btn.active {
+  opacity: 1;
+  font-weight: 700;
+}

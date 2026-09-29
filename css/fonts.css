@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "AmandaeJp";
+  src: url("../fonts/Felix Titling Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AmandaeJp2";
+  src: url("../fonts/PoiretOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

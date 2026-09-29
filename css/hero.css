@@ -1,0 +1,48 @@
+/* ===== HERO (ORIGINAL) ===== */
+
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: visible; /* Mudado de hidden para visible */
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero::after {
+  display: none;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("../imgs/1.JPEG");
+  background-size: cover;
+  background-position: center;
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 60%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  padding-bottom: 30px;
+}

@@ -1,0 +1,477 @@
+.section-block {
+  padding: 50px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  scroll-margin-top: 50px;
+}
+
+#home,
+#historia,
+#cerimonia,
+#recepcao,
+#presentes {
+  scroll-margin-top: 50px;
+}
+
+.section-block:last-of-type {
+  border-bottom: none;
+}
+
+h2 {
+  font-family: "AmandaeJp", sans-serif;
+  font-size: 5rem;
+  font-weight: 100;
+  margin-bottom: 15px;
+  color: var(--accent-color);
+}
+
+.dress-code-legenda {
+  font-family: "AmandaeJp", sans-serif;
+  font-size: 2rem;
+  font-weight: 100;
+  margin-bottom: 15px;
+  color: var(--verde);
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+.intro-box {
+  text-align: center;
+  line-height: 1.8;
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Estrutura de Fotos + Texto */
+.content-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .content-flex {
+    flex-direction: row;
+    text-align: left;
+  }
+  .content-flex.reverse {
+    flex-direction: row-reverse;
+  }
+  .content-flex .text-side {
+    flex: 1;
+  }
+  .content-flex .image-side {
+    flex: 1;
+  }
+}
+
+.image-side img {
+  width: 100%;
+  max-width: 380px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.text-side p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.historia-top {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  margin-top: 35px;
+}
+
+.historia-top img {
+  width: 45%;
+  max-width: 450px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Texto */
+.historia-texto {
+  max-width: 900px;
+  margin: 0 auto 50px;
+  text-align: center;
+  line-height: 1.9;
+  font-size: 1.3rem;
+}
+
+/* Galeria */
+.historia-galeria-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.historia-galeria {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px 0 15px;
+  scroll-snap-type: x mandatory; /* Força o alinhamento das fotos */
+  scroll-behavior: smooth; /* Animação nativa fluida */
+  margin-bottom: 30px;
+}
+
+.historia-galeria::-webkit-scrollbar {
+  height: 8px;
+}
+
+.historia-galeria::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 10px;
+}
+
+.historia-galeria img {
+  width: 450px;
+  height: 594px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.historia-galeria img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .historia-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .historia-top img {
+    width: 90%;
+  }
+
+  .historia-texto {
+    padding: 0 20px;
+    text-align: justify;
+  }
+
+  .historia-galeria {
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 12px;
+  }
+
+  .historia-galeria img {
+    width: 72vw;
+    height: 100vw;
+    max-height: 500px;
+  }
+}
+
+.cerimonia-imagem {
+  text-align: center;
+}
+
+.cerimonia-imagem img {
+  width: 100%;
+  max-width: 900px;
+  max-height: 900px;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+  margin: 0 auto;
+}
+.dress-imagem {
+  text-align: center;
+}
+
+.dress-imagem img {
+  width: 100%;
+  max-width: 650px;
+  max-height: 650px;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+  margin: 0 auto;
+}
+.dress-code-imagem {
+  text-align: center;
+  margin-bottom: 65px;
+}
+
+.dress-code-imagem img {
+  width: 100%;
+  max-width: 400px;
+  max-height: 900px;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+  margin: 0 auto;
+}
+
+.legenda-imagem {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-color);
+  opacity: 0.8;
+  margin-bottom: 35px;
+}
+
+.cerimonia-texto {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.cerimonia-texto p {
+  margin-bottom: 18px;
+  line-height: 1.8;
+}
+
+.rsvp-container {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.3rem;
+}
+
+.rsvp-input {
+  font-family: "AmandaeJp2", sans-serif;
+  font-weight: 1000;
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.rsvp-btn {
+  font-family: "AmandaeJp", sans-serif;
+  background: var(--claro);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.rsvp-btn:hover {
+  background: var(--accent-dark);
+}
+
+.rsvp-results {
+  margin-top: 20px;
+}
+
+#loading_confirm {
+  margin-top: 15px;
+}
+
+.guest-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.final-imagem {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: visible; /* Alterado para visível para permitir o vazamento */
+  margin-top: 100px;
+}
+
+.final-imagem::before {
+  display: none;
+}
+
+.final-background {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("../imgs/2.JPEG");
+  background-size: cover;
+  background-position: center;
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 40%,
+    black 100%
+  );
+
+  mask-image: linear-gradient(to bottom, transparent 0%, black 40%, black 100%);
+}
+.historia-galeria img.wide {
+  width: auto;
+  height: 594px;
+  max-width: 1500px;
+  object-fit: cover;
+}
+
+/* Responsivo (Mobile) */
+@media (max-width: 768px) {
+  .historia-galeria img.wide {
+    width: 100vw;
+    height: 100vw;
+    max-height: 500px;
+    object-fit: cover;
+  }
+}
+
+/* ==========================================
+   FOTOS EXTRAS DENTRO DA HISTÓRIA
+========================================== */
+
+.historia-extra {
+  width: 100%;
+  max-width: 900px;
+  margin: 80px auto 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 50px;
+
+  align-items: stretch;
+
+  box-sizing: border-box;
+}
+
+/* IMAGEM */
+
+.historia-extra-imagem {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.historia-extra-imagem img {
+  display: block;
+
+  width: 100%;
+  max-width: 380px;
+
+  height: 100%;
+  min-height: 350px;
+
+  object-fit: cover;
+
+  border-radius: 15px;
+  border: 1px solid var(--glass-border);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1;
+}
+
+/* TEXTO */
+
+.historia-extra-texto {
+  width: 100%;
+  max-width: 380px;
+
+  box-sizing: border-box;
+
+  line-height: 1.9;
+  font-size: 1.3rem;
+
+  text-align: left;
+
+  display: flex;
+  align-items: center;
+
+  margin: 0;
+}
+
+.historia-extra-texto p {
+  margin: 0;
+}
+.historia-extra + .historia-extra + p {
+  margin-top: 60px;
+}
+/* ==========================================
+   SEGUNDO BLOCO
+========================================== */
+
+.historia-extra-reverse .historia-extra-imagem {
+  order: 2;
+  justify-content: flex-end;
+}
+
+.historia-extra-reverse .historia-extra-texto {
+  order: 1;
+}
+
+/* ==========================================
+   ESPAÇAMENTO
+========================================== */
+
+.historia-extra + .historia-extra {
+  margin-top: 90px;
+}
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 768px) {
+  .historia-extra,
+  .historia-extra-reverse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .historia-extra-imagem,
+  .historia-extra-reverse .historia-extra-imagem {
+    width: 90%;
+    justify-content: center;
+  }
+
+  .historia-extra-imagem img {
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .historia-extra-texto,
+  .historia-extra-reverse .historia-extra-texto {
+    width: 90%;
+    max-width: 380px;
+    text-align: center;
+    margin: 0;
+  }
+}
